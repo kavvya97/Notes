@@ -1,0 +1,29 @@
+
+.login-page-form {
+    background-image: url('../../../assets/bg.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center; /*  defines the image position inside the box */
+    background-origin: content-box;
+    .login-form{
+        background-color: #ede5f2;
+        width: 50%;
+        border: 1px solid black;
+        .mat-card-header{
+            display: block;
+            justify-content: center;
+            margin: 20px 0;
+            font-weight: bold;
+            text-align: center;
+        }
+        button:hover {
+            color: white;
+        }
+        .mat-form-field, .card-label-header{
+            display: block;
+        }
+        .btn-wrapper{
+            text-align: center;
+        }
+    }
+}

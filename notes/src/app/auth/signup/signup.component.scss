@@ -1,0 +1,30 @@
+
+.signup-page-form {
+    background-image: url('../../../assets/bg.svg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center; /*  defines the image position inside the box */
+    background-origin: content-box;
+    .signup-form{
+        width: 50%;
+        border: 1px solid black;
+        background-color: #ede5f2;
+        .mat-card-header{
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        button:hover {
+            color: white;
+        }
+    }
+    .mat-form-field-wrapper {
+        padding-bottom: 0 !important;
+    }
+    .mat-form-field{
+        display: block;
+    }
+    .btn-wrapper{
+        text-align: center;
+    }
+    
+}

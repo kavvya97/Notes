@@ -1,0 +1,23 @@
+<div class="login-page-form row h-100 align-items-center justify-content-center">
+    <mat-card class="col-sm-4 my-auto login-form">
+        <div class="mat-card-header">
+            <h3 class="card-label-header">Sign In</h3>
+            <mat-label>Use your Notes Account</mat-label>
+        </div>
+        <mat-card-content>
+            <form class="form-group" [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" formControlName="email" matInput>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>password</mat-label>
+                    <input type="password" formControlName="password" matInput>
+                </mat-form-field>
+                <div class="btn-wrapper">
+                    <button class="btn" [disabled]="(loginForm.status === 'INVALID') || formSubmitted" color="notes-button" type="submit" mat-raised-button>Login</button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
