@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-bar-rating/themes/br-stars-theme';
+html, body { 
+    height: 100%;
+    background-color: #ede5f2;
+    overflow-x: hidden;
+}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body{
+    .notes-container{
+        .mat-card {
+            padding: 50px;
+        }
+    }
+    .mat-notes-button{
+        outline: none !important; 
+        color: #ede5f2;
+        background-color: #652999;
+        margin: 0 5px;
+    }
+    .mat-raised-button[disabled] :hover {
+        cursor: not-allowed;
+        color: #000000;
+    }
+    button.mat-menu-item {
+        outline: none !important;
+    }
+}

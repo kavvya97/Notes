@@ -1,0 +1,26 @@
+.notes-nav-toolbar{
+    top: 0;
+    position: sticky;
+    z-index: 1;
+    .toolbar-comp{
+        color: #ede5f2;
+        cursor: pointer;
+    }
+    .toolbar-spacer {
+        flex: 1 1 auto;
+    }
+    .toolbar-link{
+        margin-right: 10px;
+    }
+    .notes-toolbar-main{
+        background-color: #4b107f;
+        height: 60px;
+    }
+    .sub-nav-items{
+        background-color: #652999;
+        height: 40px;
+    }
+    .example-icon:focus{
+       outline: none !important; 
+    }
+}

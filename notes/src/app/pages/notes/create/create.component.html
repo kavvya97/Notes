@@ -1,0 +1,34 @@
+<div class="create-notes">
+    <span mat-dialog-title>ADD NOTE</span>
+    <div mat-dialog-content>
+        <form [formGroup]="createNotesForm" (ngSubmit)="onFormSubmit()" enctype="multipart/form-data">
+            <mat-form-field appearance="standard">
+                <mat-label>Title</mat-label>
+                <input type="text" formControlName="title" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Description</mat-label>
+                <input  type="text" formControlName="description" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Grade</mat-label>
+                <input type="text" formControlName="standard" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <mat-label>Subject</mat-label>
+                <input type="text" formControlName="subject" matInput>
+            </mat-form-field>
+            <mat-form-field appearance="standard">
+                <ngx-mat-file-input id="file" name="file" #removableInput formControlName="file" valuePlaceholder="No file chosen" [accept]="'.pdf'"></ngx-mat-file-input>
+                <mat-icon color="primary" *ngIf="removableInput.empty" matSuffix>folder</mat-icon>
+                <button color="primary" mat-icon-button matSuffix *ngIf="!removableInput.empty" (click)="removableInput.clear($event)">
+                  <mat-icon>clear</mat-icon>
+                </button>
+            </mat-form-field>
+            <div class="note-actions" mat-dialog-actions>
+                <button *ngIf="!isUpdate"  mat-raised-button  color="notes-button"  type="submit" [disabled]="formsubmitted">CREATE</button>
+                <button *ngIf="isUpdate" mat-raised-button  color="notes-button"  type="submit" [disabled]="formsubmitted">UPDATE</button>
+            </div>
+        </form>
+    </div>
+</div>

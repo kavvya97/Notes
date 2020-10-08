@@ -1,0 +1,32 @@
+<div class="signup-page-form row h-100 align-items-center justify-content-center">
+    <mat-card class="col-sm-4 my-auto signup-form">
+        <div class="mat-card-header">
+            <mat-label>Create your Notes Account</mat-label>
+        </div>
+        <mat-card-content>
+            <form class="form-group" [formGroup]="signupForm" (ngSubmit)="onFormSubmit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>username</mat-label>
+                    <input type="text" formControlName="username" matInput>
+                </mat-form-field>
+                <mat-error *ngIf="signupForm.get('username') && signupForm.get('username').errors && signupForm.get('username').touched
+                    && signupForm.get('username').errors.required">
+                    Please enter a username
+                </mat-error>
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input type="email" formControlName="email" matInput>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>password</mat-label>
+                    <input type="password" formControlName="password" matInput>
+                </mat-form-field>
+                <div class="btn-wrapper">
+                    <button class="btn" [disabled]="(signupForm.status === 'INVALID') || formSubmitted" color="notes-button" type="submit" mat-raised-button>
+                        signup<div *ngIf="formSubmitted" class="spinner-border m-2 spinner-border-sm" role="status"></div>
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

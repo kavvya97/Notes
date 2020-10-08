@@ -1,0 +1,47 @@
+.notes{
+    .notes-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        .note-items{
+            flex: 0 0 25em;
+            margin: 10px 5px;
+        }
+        .mat-card-notes{
+            height: 100%;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            background-color: #f4f0f7;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            flex-wrap: wrap;
+            .mat-card-content{
+                text-align: left;
+                margin: 10px;
+            }
+            ::ng-deep .mat-card-header-text {
+                margin: 0 auto;
+            }
+            .mat-card-notes-actions{
+                text-align: center;
+                margin: auto 0 0;
+            }
+            .mat-notes-button{
+                margin: 0 5px;
+            }
+            .note-item-label{
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+        }
+    }
+    .no-notes-display{
+        margin: 40px;
+        margin-top: 100px;
+        text-align: center;
+    }
+}

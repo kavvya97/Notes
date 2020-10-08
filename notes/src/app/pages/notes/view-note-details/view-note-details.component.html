@@ -1,0 +1,22 @@
+<ng-container *ngIf="noteDetails">
+      <div class="note-container">
+         <mat-card class="mat-card-notes mat-elevation-z3">
+            <mat-card-header>
+               <mat-card-title>{{noteDetails.note.title}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+               <div>
+                  <label class="note-item-label">Subject: &nbsp;</label><label class="note-item-value">{{noteDetails.note.subject}}</label><br>
+                  <label class="note-item-label">Grade: &nbsp;</label><label class="note-item-value">{{noteDetails.note.standard}}</label><br>
+                  <label class="note-item-label">Creator: &nbsp;</label><label class="note-item-value">{{noteDetails.note.description}}</label><br>
+                  <label class="note-item-label">Description: &nbsp;</label><label class="note-item-value">{{noteDetails.user_details.username}}</label><br>
+                  <label class="note-item-label">Rating: &nbsp;</label><br>
+                  <bar-rating name="rating" [(rate)]="noteDetails.note.ratings" [max]="5" [theme]="'stars'" [readOnly]="true"></bar-rating>
+               </div>
+            </mat-card-content>
+            <mat-card-actions class="mat-card-notes-actions">
+               <button mat-raised-button color="notes-button" (click)="downloadPDF()">DOWNLOAD</button>
+            </mat-card-actions>
+         </mat-card>
+      </div>
+   </ng-container>

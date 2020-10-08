@@ -1,0 +1,23 @@
+.user-container{
+    display: flex;
+    justify-content: center;
+    img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+    }
+    .card-title{
+        text-transform: uppercase;
+    }
+    .user-card{
+        margin: 20px;
+        padding: 30px;
+        flex: 0 0 50em;
+        justify-content: center;
+        text-align: center;
+    }
+    ::ng-deep .mat-card-header-text {
+        margin: 0 auto;
+    }
+}
+

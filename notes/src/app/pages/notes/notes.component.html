@@ -1,0 +1,34 @@
+<div class="container-fluid notes">
+   <button id="note_add" (click)="onCreatePost()">ADD NOTE</button>
+   <ng-container *ngIf="notesdata && notesdata.notes && notesdata.notes.length && !noteDetail">
+      <div class="notes-container">
+         <div class="note-items"  *ngFor="let note of notesdata.notes; let pos = index">
+            <mat-card class="mat-card-notes mat-elevation-z3">
+               <mat-card-header>
+                  <mat-card-title>{{note.title}}</mat-card-title>
+               </mat-card-header>
+               <mat-card-content>
+                  <div>
+                     <label class="note-item-label">Subject: &nbsp;</label><label class="note-item-value">{{note.subject}}</label><br>
+                     <label class="note-item-label">Grade: &nbsp;</label><label class="note-item-value">{{note.standard}}</label><br>
+                     <label class="note-item-label">Creator: &nbsp;</label><label class="note-item-value">{{note.userId.username}}</label><br>
+                     <label class="note-item-label">Rating: &nbsp;</label><br>
+                     <bar-rating name="rating" [(rate)]="note.ratings" [max]="5" [theme]="'stars'" [readOnly]="true"></bar-rating>
+                  </div>
+               </mat-card-content>
+               <mat-card-actions class="mat-card-notes-actions">
+                  <button mat-raised-button color="notes-button" (click)="viewNoteDetails(note)">VIEW</button>
+                  <button *ngIf="checkUserDetails(note)" mat-raised-button color="notes-button" (click)="editNoteDetails(note)">EDIT</button>
+                  <button *ngIf="checkUserDetails(note)" mat-raised-button color="notes-button" (click)="deleteNote(note)">DELETE</button>
+               </mat-card-actions>
+            </mat-card>
+         </div>
+      </div>
+   </ng-container>
+   <div  *ngIf="noteDetail">
+      <app-view-note-details></app-view-note-details>
+   </div>
+   <div class="no-notes-display" *ngIf="notesdata && notesdata.notes && !notesdata.notes.length">
+      <label>No Notes to display</label>
+   </div>
+</div>
