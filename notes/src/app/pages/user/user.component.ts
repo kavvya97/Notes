@@ -31,7 +31,6 @@ userInfo: {message: string, userId: string, user: UserDetail};
   }
 
   onSelectFile(event) {
-    console.log('coming here', event);
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
       // read file as data url

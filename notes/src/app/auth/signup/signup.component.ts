@@ -26,7 +26,6 @@ public signupForm;
   }
 
   onFormSubmit() {
-    console.log(this.signupForm.get('username'));
     this.formSubmitted = true;
     this.authService.signupUser(this.signupForm.value)
     .subscribe(result => {

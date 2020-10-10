@@ -25,7 +25,6 @@ noteDetails;
 
   downloadPDF() {
     this.apiService.getNoteDocument(this.noteDetails.note._id).subscribe(result => {
-      console.log(result);
     });
  }
 

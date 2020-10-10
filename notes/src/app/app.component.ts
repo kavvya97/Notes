@@ -18,7 +18,6 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     const expiryDate = localStorage.getItem('expiryDate');
     const token = localStorage.getItem('token');
-    console.log(token, 'coming here');
     if (expiryDate && (new Date(expiryDate) <= new Date()) ) {
       this.auth.logoutUser();
     }

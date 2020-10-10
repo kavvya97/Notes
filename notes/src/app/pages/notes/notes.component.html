@@ -1,6 +1,6 @@
 <div class="container-fluid notes">
    <button id="note_add" (click)="onCreatePost()">ADD NOTE</button>
-   <ng-container *ngIf="notesdata && notesdata.notes && notesdata.notes.length && !noteDetail">
+   <div *ngIf="notesdata && notesdata.notes && notesdata.notes.length && !detailView">
       <div class="notes-container">
          <div class="note-items"  *ngFor="let note of notesdata.notes; let pos = index">
             <mat-card class="mat-card-notes mat-elevation-z3">
@@ -24,8 +24,8 @@
             </mat-card>
          </div>
       </div>
-   </ng-container>
-   <div  *ngIf="noteDetail">
+   </div>
+   <div  *ngIf="detailView">
       <app-view-note-details></app-view-note-details>
    </div>
    <div class="no-notes-display" *ngIf="notesdata && notesdata.notes && !notesdata.notes.length">

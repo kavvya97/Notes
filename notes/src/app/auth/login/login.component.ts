@@ -43,7 +43,6 @@ remainingMilliseconds = 60 * 60 * 1000;
       this.setAutoLogout(this.remainingMilliseconds);
       this.router.navigate(['notes']);
     }, error => {
-      
     });
   }
 

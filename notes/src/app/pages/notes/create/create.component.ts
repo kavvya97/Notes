@@ -42,7 +42,6 @@ formsubmitted: any = false;
     this.dialogRef.close();
     const formdata = new FormData();
     const formValue = this.createNotesForm.value;
-    console.log(formValue);
     formdata.append('title', formValue.title);
     formdata.append('description', formValue.description);
     formdata.append('standard', formValue.standard);
@@ -57,7 +56,6 @@ formsubmitted: any = false;
       this.apiService.addNote(formdata)
       .subscribe(result => {
         this.router.navigate(['notes']);
-        console.log(result);
       });
     }
   }

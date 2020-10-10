@@ -27,8 +27,8 @@ const appRoutes: Routes = [
   { path: 'user/signup', component: SignupComponent },
   { path: 'user/login', component: LoginComponent },
   { path: 'user/:id', component: UserComponent, pathMatch: 'full' },
-  { path: 'notes', component: MainNotesComponent},
-  { path: 'notes/:_id', component: ViewNoteDetailsComponent}
+  { path: 'notes', component: MainNotesComponent },
+  { path: 'notes/:_id', component: MainNotesComponent }
 ];
 @NgModule({
   declarations: [

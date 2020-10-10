@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { CreateComponent } from './create/create.component';
@@ -15,16 +15,23 @@ export class NotesComponent implements OnInit {
 jwtStatus;
 notesdata: Notes = null;
 noteInfo: Note = null;
-noteDetail = false;
+detailView = false;
   constructor(
     public dialog: MatDialog,
     public apiService: ApiService,
     public auth: AuthService,
-    public router: Router
+    public router: Router,
+    public route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    this.noteDetail = false;
+    this.route.params.subscribe((params) => {
+      if (params._id) {
+        this.detailView = true;
+      } else {
+        this.detailView = false;
+      }
+    });
     this.jwtStatus = this.auth.checkExpiry();
     if (this.jwtStatus) {
       this.router.navigate(['user/login']);
@@ -59,7 +66,7 @@ noteDetail = false;
   }
 
   viewNoteDetails(details: NoteDetail) {
-    this.noteDetail = true;
+    this.detailView = true;
     this.router.navigate([`notes/${details._id}`]);
   }
 
